@@ -77,6 +77,33 @@ Para ativar, só é preciso configurar o GitHub Pages **uma única vez** no repo
 
 Não é necessário nenhum passo de build: o workflow simplesmente empacota os arquivos do repositório e publica como estão.
 
+### Domínio próprio (lkbrownies.com.br)
+
+O site está configurado para usar o domínio próprio **lkbrownies.com.br** via arquivo [`CNAME`](CNAME) na raiz do repositório (o workflow do GitHub Pages já publica esse arquivo automaticamente).
+
+Passos para deixar o domínio ativo:
+
+1. **No registrador do domínio (ex.: registro.br), configure o DNS:**
+   - Registro tipo `A` para `@` (domínio raiz) apontando para os 4 IPs do GitHub Pages:
+     ```
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+     ```
+   - (Opcional, IPv6) Registro tipo `AAAA` para `@` apontando para:
+     ```
+     2606:50c0:8000::153
+     2606:50c0:8001::153
+     2606:50c0:8002::153
+     2606:50c0:8003::153
+     ```
+   - Registro tipo `CNAME` para `www` apontando para `caio-martin.github.io.`
+2. **No GitHub**, em **Settings → Pages → Custom domain**, informe `lkbrownies.com.br` e salve (o GitHub confirma a propriedade do domínio a partir do DNS configurado). Marque **Enforce HTTPS** assim que o certificado for emitido (pode levar até algumas horas).
+3. Aguarde a propagação do DNS (pode levar de minutos a até 48h). Depois disso, o site responde em `https://lkbrownies.com.br`.
+
+> Se o arquivo `CNAME` for removido manualmente pelo GitHub (isso acontece se o campo "Custom domain" for limpo em Settings → Pages), lembre de restaurá-lo no próximo deploy.
+
 ## Tecnologias
 
 - HTML5 e CSS3 (Flexbox/Grid, variáveis CSS, media queries)
