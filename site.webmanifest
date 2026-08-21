@@ -1,0 +1,12 @@
+{
+  "name": "LK Brownies",
+  "short_name": "LK Brownies",
+  "description": "Brownies artesanais recheados e trufados, feitos na hora em Jundiaí/SP.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf3e7",
+  "theme_color": "#3b2415",
+  "icons": [
+    { "src": "img/logo.png", "sizes": "640x641", "type": "image/png" }
+  ]
+}

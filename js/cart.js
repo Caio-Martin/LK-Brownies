@@ -87,7 +87,7 @@ function renderizarCarrinho() {
 }
 
 function montarMensagem() {
-  const linhas = carrinho.map(i => `- ${i.quantidade}x ${i.nome}`);
+  const linhas = carrinho.map(i => `• ${i.quantidade}x ${i.nome}`);
   const obs = document.getElementById('cartObs').value.trim();
 
   let mensagem = 'Olá! Gostaria de fazer o seguinte pedido:\n\n' + linhas.join('\n');

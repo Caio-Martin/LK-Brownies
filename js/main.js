@@ -15,6 +15,12 @@ document.querySelectorAll('.nav a').forEach(link => {
   });
 });
 
+function atualizarScrollHeader() {
+  header.classList.toggle('is-scrolled', window.scrollY > 8);
+}
+atualizarScrollHeader();
+window.addEventListener('scroll', atualizarScrollHeader, { passive: true });
+
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
